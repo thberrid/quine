@@ -2,4 +2,4 @@
 
 notes : 
 
-[Madore](http://www.madore.org/~david/computers/quine.html)
+[Madore's presentation](http://www.madore.org/~david/computers/quine.html)
