@@ -1,6 +1,12 @@
 # Prerequisites
 *.d
 
+tmp
+
+Colleen
+Grace
+Sully
+
 # Object files
 *.o
 *.ko

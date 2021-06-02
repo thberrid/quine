@@ -1,7 +1,7 @@
 SHELL = /bin/sh
 VPATH = .
 CC = clang
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 
 .SUFFIXES : .c
 
