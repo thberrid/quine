@@ -1,32 +1,35 @@
 SHELL = /bin/sh
 VPATH = .
-CC = clang
-CFLAGS = -Wall -Wextra -Werror
-
-.SUFFIXES : .c
-
+ASFLAGS = -f elf64
 NAME = drquine
+BINS = Colleen Grace Sully
 
 .PHONY : all
 all : $(NAME)
 
-$(NAME) : Sully Collen Grace
+$(NAME) : $(BINS)
 
-Sully : Sully.s
-	$(CC) -o $@ $< $(CFLAGS)
+Colleen: Colleen.o
+	ld -dynamic-linker /lib64/ld-linux-x86-64.so.2 -lc $< -o $@
 
-Collen : Collen.s
-	$(CC) -o $@ $< $(CFLAGS)
-	
-Grace : Grace.s
-	$(CC) -o $@ $< $(CFLAGS)
+Grace: Grace.o
+	ld -dynamic-linker /lib64/ld-linux-x86-64.so.2 -lc $< -o $@
+
+Sully: Sully.o
+	ld -dynamic-linker /lib64/ld-linux-x86-64.so.2 -lc $< -o $@
+
+%.o: %.s
+	nasm $(ASFLAGS) -o $@ $<
 
 .PHONY : clean
 clean :
-	rm -f Sully Collen Grace
+	rm -f $(addsuffix .o, $(BINS))
+	rm -f Sully_*.s
+	rm -f Grace_kid.s
 
 .PHONY : fclean
 fclean : clean
+	rm -f $(BINS)
 
 .PHONY : re
 re: fclean all

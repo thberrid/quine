@@ -23,12 +23,12 @@ Sully : Sully.c
 
 .PHONY : clean
 clean :
-	rm -f Sully Colleen Grace
+	rm -f Sully_*.c
+	rm -f Grace_kid.c
 
 .PHONY : fclean
 fclean : clean
-	rm -f Sully_*.c
-	rm -f Grace_kid.c
+	rm -f Sully Colleen Grace
 
 .PHONY : re
 re: fclean all
