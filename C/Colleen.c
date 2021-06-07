@@ -14,21 +14,8 @@ int main(void)
 	/*
 		in comment
 	*/
-	char n = '\n';
-	char t = '\t';
-	char q = '"';
-	char b = '\\';
-	char *s1 = "#include <stdio.h>%c%cvoid fn(void)%c{%c%creturn ;%c}%c%c";
-	char *s2 = "/*%c%cout comment%c*/%c%c";
-	char *s3 = "int main(void)%c{%c%c/*%c%c%cin comment%c%c%c*/%c";
-	char *s4 = "%cchar n = '%cn';%c%cchar t = '%ct';%c%cchar q = '%c';%c%cchar b = '%c%c';%c";
-	char *s5 = "%cchar *s1 = %c%s%c;%c%cchar *s2 = %c%s%c;%c%cchar *s3 = %c%s%c;%c%cchar *s4 = %c%s%c;%c%cchar *s5 = %c%s%c;%c%cfn();%c%cprintf(s1, n, n, n, n, t, n, n, n);%c%cprintf(s2 , n, t, n, n, n);%c%cprintf(s3, n, n, t, n, t, t, n, n, t, n);%c%cprintf(s4, t, b, n, t, b, n, t, q, n, t, b, b, n);%c%cprintf(s5, t, q, s1, q, n, t, q, s2, q, n, t, q, s3, q, n, t, q, s4, q, n, t, q, s5, q, n, t, n, t, n, t, n, t, n, t, n, t, n, t, n, n);%c%creturn (0);%c}%c";
-
+	char *s = "#include <stdio.h>%1$c%1$cvoid fn(void)%1$c{%1$c%2$creturn ;%1$c}%1$c%1$c/*%1$c%2$cout comment%1$c*/%1$c%1$cint main(void)%1$c{%1$c%2$c/*%1$c%2$c%2$cin comment%1$c%2$c*/%1$c%2$cchar *s = %3$c%5$s%3$c;%1$c%2$cfn();%1$c%2$cprintf(s, '%4$cn', '%4$ct', '%3$c', '%4$c%4$c', s);%1$c%2$creturn (0);%1$c}";
 	fn();
-	printf(s1, n, n, n, n, t, n, n, n);
-	printf(s2 , n, t, n, n, n);
-	printf(s3, n, n, t, n, t, t, n, n, t, n);
-	printf(s4, t, b, n, t, b, n, t, q, n, t, b, b, n);
-	printf(s5, t, q, s1, q, n, t, q, s2, q, n, t, q, s3, q, n, t, q, s4, q, n, t, q, s5, q, n, t, n, t, n, t, n, t, n, t, n, t, n, t, n, n);
+	printf(s, '\n', '\t', '"', '\\', s);
 	return (0);
 }
