@@ -1,5 +1,5 @@
 section .data
-	msg db "section .data", 0
+	msg db "section .data_%c_msg db %s"
 
 section .text
 	global _start
@@ -13,12 +13,11 @@ _fn:
 
 _start :
 	mov rdi, msg
-	mov rsi, 0x0a
-	mov rdx, 0x9
+	mov sil, 10
+	lea rdx, [msg]
 	mov rcx, 0x22
 	mov r8, 0x5c
 	mov r9, msg
-	xor rax, rax
 	call printf
 	call _fn
 
