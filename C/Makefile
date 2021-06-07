@@ -10,23 +10,25 @@ NAME = drquine
 .PHONY : all
 all : $(NAME)
 
-$(NAME) : Sully Collen Grace
+$(NAME) : Colleen Grace Sully
 
-Sully : Sully.c
-	$(CC) -o $@ $< $(CFLAGS)
-
-Collen : Collen.c
+Colleen : Colleen.c
 	$(CC) -o $@ $< $(CFLAGS)
 	
 Grace : Grace.c
 	$(CC) -o $@ $< $(CFLAGS)
 
+Sully : Sully.c
+	$(CC) -o $@ $< $(CFLAGS)
+
 .PHONY : clean
 clean :
-	rm -f Sully Collen Grace
+	rm -f Sully Colleen Grace
 
 .PHONY : fclean
 fclean : clean
+	rm -f Sully_*.c
+	rm -f Grace_kid.c
 
 .PHONY : re
 re: fclean all
