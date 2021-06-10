@@ -8,10 +8,4 @@ notes :
 
 [8-bits registers](https://stackoverflow.com/questions/20637569/assembly-registers-in-64-bit-architecture/20637866#20637866)
 
-good to know: [printf and flush](https://stackoverflow.com/questions/38379553/using-printf-in-assembly-leads-to-empty-output-when-piping-but-works-on-the-ter)
-
-add C :
-- close function
-- do something in fn(void)
-- 3 macros
-- O_RDONLY
+good to know: [exit, printf and flush](https://stackoverflow.com/questions/38379553/using-printf-in-assembly-leads-to-empty-output-when-piping-but-works-on-the-ter)
