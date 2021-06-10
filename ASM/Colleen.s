@@ -23,9 +23,9 @@ _start :
 	mov rcx, 0x22
 	mov r8,  data
 	xor rax, rax	; because no extra params on stack have to be considered
-	
+
 	call printf
-	
+
 	xor rdi, rdi
 	call fflush		; because of printf, simply call exit works too
 
